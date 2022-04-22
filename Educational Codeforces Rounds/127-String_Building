@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t;
+   cin>>t;
+   while(t--)
+   {
+       string s;
+       cin>>s;
+       string s1;
+        int f=1;
+       for(int i=0;i<s.size();i++)
+       {
+           while(s[i]==s[i+1])
+           {
+               s1+=s[i];
+               i++;
+           }
+
+           s1+=s[i];
+
+          //cout<<s1<<endl;
+
+          if(s1.size()==1){f=0;break;}
+          else {s1.erase();continue;}
+
+       }
+       if(f)cout<<"YES\n";
+       else cout<<"NO\n";
+
+   }
+}
