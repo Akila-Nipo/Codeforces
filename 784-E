@@ -1,0 +1,52 @@
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test;
+    cin>>test;
+    while(test--)
+    {
+        long long int n,i,j,k,c=0,diff=0,no=0;
+        cin>>n;
+        char s1[n],s2[n];
+        long long cnt[n]={0};
+
+        map<string,long long>mp;
+
+        for(i=0;i<n;i++)
+        {
+          string s;
+          cin>>s;
+          mp[s]++;
+        }
+
+         for(auto it:mp)
+         {
+             string ss=it.first;
+             s1[no]=ss[0];
+             s2[no]=ss[1];
+             cnt[no]=it.second;
+             no++;
+
+         }
+
+         for(i=0;i<no;i++)
+         {   long long sum=0;
+             for(j=i+1;j<no;j++)
+             {
+                 if(s1[i]==s1[j]&& s2[i]!=s2[j]  ||  (s1[i]!=s1[j] && s2[i]==s2[j]))
+                    sum+=cnt[j];
+             }
+             c+=sum*cnt[i];
+
+         }
+
+         cout<<c<<"\n";
+
+    }
+}
+
+
+
