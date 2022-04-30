@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    { int i,j,k,f=1,c=0;
+      string s;
+      cin>>s;
+      map<char,int>mp;
+      for(i=0;i<s.length();i++)
+      {
+          if(mp[s[i]])break;
+          else
+          {mp[s[i]]++;
+           c++;
+          }
+      }
+      for(i=0;i<s.size()-c;i++)
+      {
+          if(s[i]!=s[i+c])
+          {
+              f=0;
+              break;
+          }
+      }
+      if(f)cout<<"YES\n";
+      else cout<<"NO\n";
+
+    }
+}
