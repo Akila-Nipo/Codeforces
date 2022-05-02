@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test;
+    cin>>test;
+    while(test--)
+    {
+        string s,t;
+        cin>>s>>t;
+        if(t.length()==1 && t[0]=='a')
+        {
+           cout<<1<<endl;
+
+        }
+       else
+        {
+            if(count(t.begin(),t.end(),'a')==0)
+            {long long ss=pow(2,s.length());
+              cout<<ss<<endl;
+            }
+            else cout<<"-1\n";
+        }
+    }
+}
