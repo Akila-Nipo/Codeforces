@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test;
+    cin>>test;
+    for(int i=1;i<=test;i++)
+    {
+        long long x,y,ans;
+        cin>>x>>y;
+        ans=y/x;
+        if(y%x==0)
+        {
+            cout<<1<<" "<<ans<<"\n";
+
+        }
+        else cout<<"0 0"<<"\n";
+    }
+}
