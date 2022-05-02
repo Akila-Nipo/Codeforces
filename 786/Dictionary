@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test;
+    cin>>test;
+    for(int i=1;i<=test;i++)
+    {
+        string s;
+        cin>>s;
+        int no=((s[0]-'a')*25)+abs(s[1]-'a');
+        if(s[1]-'a'<s[0]-'a')no++;
+        cout<<no<<"\n";
+    }
+}
