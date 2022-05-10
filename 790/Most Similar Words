@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+     int nn,mm;
+     cin>>nn>>mm;
+     string ss[nn];
+     for(int i=0;i<nn;i++)
+     {
+         cin>>ss[i];
+
+     }
+    long long cc=9999999999,ccc=0;
+
+    for(int i=0;i<nn-1;i++)
+    {
+        for(int j=i+1;j<nn;j++)
+        {
+            ccc=0;
+             for(int k=0;k<mm;k++)
+             {
+                 if(ss[i][k]!=ss[j][k])
+                 {
+                     ccc+=abs(ss[i][k]-ss[j][k]);
+                 }
+             }
+             cc=min(cc,ccc);
+        }
+    }
+    cout<<cc<<endl;
+    }
+
+}
