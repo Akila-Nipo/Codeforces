@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k;
+        cin>>n>>k;
+        int a[n];
+        set<int>s;
+        map<int,int>mp;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+            mp[a[i]]++;
+
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            if(mp[a[i]]>=k)s.insert(a[i]);
+        }
+        int in=0,b[n];
+       set<int>::iterator it;
+       for(it=s.begin();it!=s.end();it++)
+       {
+           b[in++]=*it;
+
+       }
+       if(in==0)cout<<"-1\n";
+       else if(in==1)cout<<b[0]<<" "<<b[0]<<endl;
+       else
+       {
+           sort(b,b+in);
+
+             int mx=-1,m1=0,m2=0,c1=1,c2=0,f;
+             m1=b[0];
+
+    for(int i=1;i<in;i++)
+    {
+        if(b[i]==m1+1)
+        {
+
+           c1++;
+           m1=b[i];
+           if(c1>c2)m2=i;
+        }
+
+       else
+       {
+           if(c1>c2)
+           {
+               c2=c1;
+
+              c1=1;
+              m1=b[i];
+
+
+           }
+         else
+         {
+             c1=1;m1=b[i];
+         }
+
+
+       }
+
+
+      mx=max(c1,mx);
+    }
+
+   cout<<b[m2-mx+1]<<" "<<b[m2]<<endl;
+       }
+
+    }
+}
+
