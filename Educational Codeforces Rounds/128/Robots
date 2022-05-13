@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,m;
+        cin>>n>>m;
+
+        char s[30][30];
+        int no[30][30],su[30][30],rec[30][30],rec1[30][30],u=0,d=0;
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                no[i][j]=0;
+                su[i][j]=9000;
+            }
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                cin>>s[i][j];
+            }
+        }
+
+        int in=0;
+
+
+
+         for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(s[i][j]=='R') {su[i][j]=(i-0)+(j-0);rec[i][j]=i-0;rec1[i][j]=j-0;}
+            }
+        }
+        int mn=9000;
+
+          for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(s[i][j]=='R' && su[i][j]<mn)
+                {
+                    mn=su[i][j];
+                    u=rec[i][j];
+                    d=rec1[i][j];
+                }
+            }
+        }
+      //  cout<<"mn: "<<mn<<" u: "<<u<<" d: "<<d<<endl;
+        int f=1;
+        //cout<<mn<<endl;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(s[i][j]=='R')
+                {
+                    int x,y;
+                    x=i-u;
+                    y=j-d;
+                   // cout<<x<<" "<<y<<endl;
+                    if(x<0 || y<0){f=0;break;}
+                }
+            }
+            if(!f)break;
+        }
+
+
+if(!f)cout<<"NO\n";
+ else cout<<"YES\n";
+
+
+
+    }
+    return 0;
+}
