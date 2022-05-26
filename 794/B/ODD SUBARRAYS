@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test;
+    cin>>test;
+    for(int tt=1;tt<=test;tt++)
+    {
+        int nm,n,s=0,asc=1,desc=1,no=0;
+        cin>>n;
+        vector<int>v1,v2,v3;
+        for(int i=0;i<n;i++)
+        {
+            int x;
+            cin>>x;
+            v1.push_back(x);
+            v2.push_back(x);
+            v3.push_back(x);
+        }
+        sort(v2.begin(),v2.end());
+        sort(v3.begin(), v3.end(), greater<int>());
+        nm=n;
+
+        for(int i=0;i<v1.size();i++)
+        {
+            if(v1[i]!=v2[i])
+            {
+                asc=0;
+                break;
+            }
+        }
+        if(asc==1)cout<<"0\n";
+        else
+        {
+            for(int i=0;i<v1.size();i++)
+        {
+            if(v1[i]!=v3[i])
+            {
+                desc=0;
+                break;
+            }
+        }
+        if(desc==1)cout<<n/2<<"\n";
+        else
+        {
+            for(int i=0;i<v1.size()-1;i++)
+            {
+            beg: if(v1[i]-v1[i+1]>=1)
+                {
+                    no++;
+                    i=i+2;
+                    if(i<v1.size()-1)goto beg;
+                    else break;
+                }
+                else continue;
+            }
+            cout<<no<<"\n";
+        }
+        }
+    }
+    return 0;
+}
+
+ 
