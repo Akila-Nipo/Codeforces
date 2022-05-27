@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,i,j,k;
+        cin>>n;
+        double s=0;
+        int f=0;
+        int ar[n],c[n];
+        for(i=0;i<n;i++)
+        {
+            cin>>ar[i];
+            s+=ar[i];
+
+        }
+        s=s/n;
+        for(i=0;i<n;i++)
+        {
+            if(s==ar[i])
+            {
+                f=1;break;
+            }
+        }
+        if(f)cout<<"YES\n";
+        else cout<<"NO\n";
+
+    }
+}
